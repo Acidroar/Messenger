@@ -1,6 +1,7 @@
 package transport
 
 import (
+	"github.com/labstack/echo/v4"
 	"log"
 )
 
@@ -11,11 +12,12 @@ type HttpServer struct {
 
 func New(address string) *HttpServer {
 	echoServer := echo.New()
-
+	print("OK")
 	return &HttpServer{
 		address: address,
 		Echo:    echoServer,
 	}
+
 }
 
 func (h *HttpServer) StartHttpServer() {
@@ -23,4 +25,5 @@ func (h *HttpServer) StartHttpServer() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	print("OK")
 }

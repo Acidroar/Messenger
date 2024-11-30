@@ -1,10 +1,11 @@
-package internal
+package app
 
-import "Messenger/internal/transport"
+import "Messenger/Messenger/internal/transport"
 
 const httpPort = "8080"
 
 func Run() {
 	httpServer := transport.New(httpPort)
 	httpServer.StartHttpServer()
+	print("OK")
 }
